@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "migrate": "drizzle-kit generate:pg"
   },
   "devDependencies": {
     "@skeletonlabs/skeleton": "2.5.1",
@@ -19,7 +20,6 @@
     "@types/node": "20.9.4",
     "ai": "^2.2.25",
     "autoprefixer": "10.4.16",
-    "drizzle-kit": "^0.20.6",
     "langchain": "0.0.197-rc.0",
     "postcss": "8.4.31",
     "svelte": "^4.2.7",

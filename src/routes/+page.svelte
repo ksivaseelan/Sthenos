@@ -3,12 +3,23 @@
     import {useChat} from "ai/svelte"
     const {input, messages, handleSubmit} = useChat()
 	import { Avatar } from '@skeletonlabs/skeleton';
+
+	export let data;
 </script>
 
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<h2 class="h2">Welcome to Sthenos</h2>
+		<p>
+			{#await data.streamed.views}
+				Loading...
+			{:then views} 
+				This Page has been viewed {views} times
+			{:catch error}
+				{error.message}
+			{/await}
+		</p>
 		
 
 		<div class="">
