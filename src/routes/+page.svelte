@@ -12,10 +12,10 @@
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<h2 class="h2">Welcome to Sthenos</h2>
 		<p>
-			{#await data.streamed.views}
+			{#await data.streamed.chat}
 				Loading...
-			{:then views} 
-				This Page has been viewed {views} times
+			{:then chat}
+				Chat: {chat.content} 
 			{:catch error}
 				{error.message}
 			{/await}

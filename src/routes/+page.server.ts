@@ -1,24 +1,26 @@
-import {conn} from '$lib/db/db';
-import {PageInsights} from '$lib/db/schema';
+import {conn} from '$lib/db/conn';
+import {Chat} from '$lib/db/schema';
 import {eq} from "drizzle-orm";
 
 export const load = async () => {
-    return {streamed: {views: fetchviews()}}
+    return {streamed: {chat: fetchchat()}}
 }
 
-const fetchviews = async () => {
-    const insights = await conn
-    .select()
-    .from(PageInsights)
-    .where(eq(PageInsights.id, 1));
+const fetchchat = async () => {
+    
 
-    const views = ++insights[0].views;
+    const content = "apple"
 
     await conn
-    .update(PageInsights)
-    .set({views})
-    .where(eq(PageInsights.id, 1))
+    .update(Chat)
+    .set({content: content})
+    .where(eq(Chat.id, 1))
     .returning()
 
-    return views
+    const chat = await conn
+    .select()
+    .from(Chat)
+    .where(eq(Chat.id, 1));
+
+    return chat[0]
 }

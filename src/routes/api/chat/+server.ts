@@ -4,8 +4,9 @@ import { AIMessage, HumanMessage } from "langchain/schema";
 import { RunnableSequence } from "langchain/schema/runnable";
 import {BytesOutputParser} from "langchain/schema/output_parser";
 import {PromptTemplate} from "langchain/prompts";
-
-
+import {conn} from '$lib/db/conn';
+import {Chat} from '$lib/db/schema';
+import {eq} from "drizzle-orm";
 
 export const POST = async ({request}) => {
 
