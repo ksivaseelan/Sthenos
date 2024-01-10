@@ -4,9 +4,13 @@ import { AIMessage, HumanMessage } from "langchain/schema";
 import { RunnableSequence } from "langchain/schema/runnable";
 import {BytesOutputParser} from "langchain/schema/output_parser";
 import {PromptTemplate} from "langchain/prompts";
+<<<<<<< HEAD
 import {conn} from '$lib/db/conn';
 import {Chat} from '$lib/db/schema';
 import {eq} from "drizzle-orm";
+=======
+
+>>>>>>> parent of 7eb613d (page view counter with drizzle and vercel postgres implemented)
 
 export const POST = async ({request}) => {
 

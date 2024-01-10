@@ -3,14 +3,13 @@
     import {useChat} from "ai/svelte"
     const {input, messages, handleSubmit} = useChat()
 	import { Avatar } from '@skeletonlabs/skeleton';
-
-	export let data;
 </script>
 
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<h2 class="h2">Welcome to Sthenos</h2>
+<<<<<<< HEAD
 		<p>
 			{#await data.streamed.chat}
 				Loading...
@@ -20,6 +19,8 @@
 				{error.message}
 			{/await}
 		</p>
+=======
+>>>>>>> parent of 7eb613d (page view counter with drizzle and vercel postgres implemented)
 		
 
 		<div class="">
